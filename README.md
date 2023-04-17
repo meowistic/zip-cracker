@@ -2,10 +2,11 @@
 ## How to setup
 to setup the zip cracker, you have to do the following things
 * Download and setup [Python](https://www.python.org/downloads/)
-* Once python is downloaded, download [Colorama](https://github.com/tartley/colorama) using the console, just type 
+* Once python is downloaded, download [Colorama](https://pypi.org/project/colorama/) using the console, just type 
 ``pip install colorama``
-* Get a password list text file (rockyou.txt for example.)
-* double click zipcrack and you're ready!
+* Also install [urllib3](https://pypi.org/project/urllib3/), type 
+``pip install urllib3``
+* double click `zipcrack.py` and you're ready!
 
 ## Timings
 
