@@ -1,6 +1,5 @@
  license = """         GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
-
  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed."""
@@ -12,12 +11,12 @@ import colorama
 import time
 from colorama import Fore
 import os.path
+import urllib.request
 
 
 colorama.init()
 
 print(Fore.LIGHTYELLOW_EX+"""
-
 ███╗   ███╗███████╗ ██████╗ ██╗    ██╗███████╗    ███████╗██╗██████╗      ██████╗██████╗  █████╗  ██████╗██╗  ██╗███████╗██████╗ 
 ████╗ ████║██╔════╝██╔═══██╗██║    ██║██╔════╝    ╚══███╔╝██║██╔══██╗    ██╔════╝██╔══██╗██╔══██╗██╔════╝██║ ██╔╝██╔════╝██╔══██╗
 ██╔████╔██║█████╗  ██║   ██║██║ █╗ ██║███████╗      ███╔╝ ██║██████╔╝    ██║     ██████╔╝███████║██║     █████╔╝ █████╗  ██████╔╝
@@ -61,14 +60,15 @@ def crack_password(password_list, obj):
 
     return False
 
+downld = input("Would you like to download rockyou.txt (133 mb), a password list. (Y/N): ")
 
-password_list = input("[?] TXT file with passwords: ")
+if downld == "y" or downld == "Y" or downld == "yes" or downld == "YES":
+  urllib.request.urlretrieve("https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt", "rockyou.txt")
+
+else:
+  password_list = input("[?] input your custom file with passwords: ")
 if ".txt" not in password_list:
     password_list = password_list+".txt"
-else:
-    pass
-
-
 
 
 try:
